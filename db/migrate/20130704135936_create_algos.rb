@@ -17,5 +17,3 @@ class CreateAlgos < ActiveRecord::Migration
     end
   end
 end
-
-Price=80,224-5,228A-7159B-0C-1,453D+2293E+440F+0G+1,777H-.03053I
