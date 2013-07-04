@@ -1,0 +1,61 @@
+<%= form_for(@algo) do |f| %>
+  <% if @algo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@algo.errors.count, "error") %> prohibited this algo from being saved:</h2>
+
+      <ul>
+      <% @algo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :y_intercept %><br />
+    <%= f.text_field :y_intercept %>
+  </div>
+  <div class="field">
+    <%= f.label :a %><br />
+    <%= f.number_field :a %>
+  </div>
+  <div class="field">
+    <%= f.label :b %><br />
+    <%= f.check_box :b %>
+  </div>
+  <div class="field">
+    <%= f.label :c %><br />
+    <%= f.check_box :c %>
+  </div>
+  <div class="field">
+    <%= f.label :d %><br />
+    <%= f.check_box :d %>
+  </div>
+  <div class="field">
+    <%= f.label :e %><br />
+    <%= f.check_box :e %>
+  </div>
+  <div class="field">
+    <%= f.label :f %><br />
+    <%= f.check_box :f %>
+  </div>
+  <div class="field">
+    <%= f.label :g %><br />
+    <%= f.check_box :g %>
+  </div>
+  <div class="field">
+    <%= f.label :h %><br />
+    <%= f.check_box :h %>
+  </div>
+  <div class="field">
+    <%= f.label :i %><br />
+    <%= f.text_field :i %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
