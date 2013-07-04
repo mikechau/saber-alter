@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Truck:</b>
+  <%= @value.truck_id %>
+</p>
+
+<p>
+  <b>Ts:</b>
+  <%= @value.ts %>
+</p>
+
+<p>
+  <b>Estimate:</b>
+  <%= @value.estimate %>
+</p>
+
+<p>
+  <b>Actual:</b>
+  <%= @value.actual %>
+</p>
+
+
+<%= link_to 'Edit', edit_value_path(@value) %> |
+<%= link_to 'Back', values_path %>

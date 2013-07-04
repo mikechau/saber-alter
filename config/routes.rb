@@ -1,4 +1,7 @@
 SaberAlter::Application.routes.draw do
+  resources :values
+
+
   resources :trucks
 
 
