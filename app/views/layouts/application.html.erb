@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<%= nav_bar :fixed => :top, :responsive => true, :fluid => true, :brand => "Saber Alter", :brand_link => root_url do %>
+  <%= menu_group do %>
+    <%= menu_divider %>
+    <%= menu_item "Home", root_path %>
+    <%= menu_divider %>
+    <%= menu_item "Services" %>
+    <%= menu_item "About" %>
+    <%= menu_item "Contact" %>
+  <% end %>
+<% end %>
+
 <%= yield %>
 
 </body>
