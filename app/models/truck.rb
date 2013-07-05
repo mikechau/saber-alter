@@ -6,9 +6,9 @@ class Truck < ActiveRecord::Base
   validates_presence_of :model_year, :i
   validates_uniqueness_of :name
 
-  def calculate(algo)
-    algo = Algo.find(algo["id"])
-    (algo.y_intercept) - (algo.a * (Time.now.year - model_year)) - (algo.b * dummy(b)) - (algo.c * dummy(c)) - (algo.d * dummy(d)) + (algo.e * dummy(e)) + (algo.f * dummy(f)) + (algo.g * dummy(g)) + (algo.h * dummy(h)) - (algo.i * i)
+  def calculate(algo_id)
+    algo = Algo.find(algo_id)
+    (algo.y_intercept) - (algo.a * a) - (algo.b * dummy(b)) - (algo.c * dummy(c)) - (algo.d * dummy(d)) + (algo.e * dummy(e)) + (algo.f * dummy(f)) + (algo.g * dummy(g)) + (algo.h * dummy(h)) - (algo.i * i)
   end
 
   def dummy(var)

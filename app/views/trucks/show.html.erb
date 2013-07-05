@@ -10,7 +10,6 @@
         <li><b>M2:</b> <%= @truck.m2 %></li>
         <li><b>A:</b> <%= @truck.a %></li>
         <li><b>B:</b> <%= @truck.b %></li>
-        <li><b>B:</b> <%= @truck.b %></li>
         <li><b>C:</b> <%= @truck.c %></li>
         <li><b>D:</b> <%= @truck.d %></li>
         <li><b>E:</b> <%= @truck.e %></li>
@@ -28,6 +27,27 @@
       <h1><%= number_to_currency(@value.estimate) %></h1>
       <br />
       <h4><%= @value.ts %></h4>
+    </div>
+
+    <div class="span3 offset1 well">
+      <h2>Algo Diagnostics:</h2>
+      <br />
+      <ul>
+        <li><b>Name:</b> <%= @algo.name %></li>
+        <li><b>Y-Intercept:</b> <%= @algo.y_intercept %></li>
+        <li><b>A:</b> <%= -@algo.a %></li>
+        <li><b>B:</b> <%= -@algo.b %></li>
+        <li><b>C:</b> <%= -@algo.c %></li>
+        <li><b>D:</b> <%= -@algo.d %></li>
+        <li><b>E:</b> <%= +@algo.e %></li>
+        <li><b>F:</b> <%= +@algo.f %></li>
+        <li><b>G:</b> <%= +@algo.g %></li>
+        <li><b>H:</b> <%= +@algo.h %></li>
+        <li><b>I:</b> <%= -@algo.i %></li>
+      </ul>
+      <br />
+      <h2>Formula Executed:</h2>
+      (<%= @algo.y_intercept %>) - (<%= @algo.a %> * <%= @truck.a %>) - (<%= @algo.b %> * <%= @truck.dummy(@truck.b) %>) - (<%= @algo.c %> * <%= @truck.dummy(@truck.c) %>) - (<%= @algo.d %> * <%= @truck.dummy(@truck.d) %>) + (<%= @algo.e %> * <%= @truck.dummy(@truck.e) %>) + (<%= @algo.f %> * <%= @truck.dummy(@truck.f) %>) + (<%= @algo.g %> * <%= @truck.dummy(@truck.g) %>) + (<%= @algo.h %> * <%= @truck.dummy(@truck.h) %>) - (<%= @algo.i %> * <%= @truck.i %>) 
     </div>
 
   </div>

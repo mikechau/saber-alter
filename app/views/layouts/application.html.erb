@@ -11,7 +11,11 @@
 <%= nav_bar :fixed => :top, :responsive => true, :fluid => true, :brand => "Saber Alter", :brand_link => root_url do %>
   <%= menu_group do %>
     <%= menu_divider %>
-    <%= menu_item "Home", root_path %>
+    <%= menu_item "Truck Estimate", root_path %>
+    <%= menu_item "Trucks List", trucks_url %>
+    <%= menu_divider %>
+    <%= menu_item "Algo Create", new_algo_url %>
+    <%= menu_item "Algos List", algos_url %>
     <%= menu_divider %>
     <%= menu_item "Services" %>
     <%= menu_item "About" %>
