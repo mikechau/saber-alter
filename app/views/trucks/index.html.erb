@@ -1,47 +1,51 @@
-<h1>Listing trucks</h1>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span8 offset1">
+      <h1>Listing trucks</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Model year</th>
-    <th>M</th>
-    <th>M2</th>
-    <th>A</th>
-    <th>B</th>
-    <th>C</th>
-    <th>D</th>
-    <th>E</th>
-    <th>F</th>
-    <th>G</th>
-    <th>H</th>
-    <th>I</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+      <table class="table table-hover table-striped table-condensed table-bordered">
+        <tr>
+          <th>Name</th>
+          <th>Model year</th>
+          <th>M</th>
+          <th>M2</th>
+          <th>A</th>
+          <th>B</th>
+          <th>C</th>
+          <th>D</th>
+          <th>E</th>
+          <th>F</th>
+          <th>G</th>
+          <th>H</th>
+          <th>I</th>
+          <th></th>
+          <th></th>
+        </tr>
 
-<% @trucks.each do |truck| %>
-  <tr>
-    <td><%= truck.name %></td>
-    <td><%= truck.model_year %></td>
-    <td><%= truck.m %></td>
-    <td><%= truck.m2 %></td>
-    <td><%= truck.a %></td>
-    <td><%= truck.b %></td>
-    <td><%= truck.c %></td>
-    <td><%= truck.d %></td>
-    <td><%= truck.e %></td>
-    <td><%= truck.f %></td>
-    <td><%= truck.g %></td>
-    <td><%= truck.h %></td>
-    <td><%= truck.i %></td>
-    <td><%= link_to 'Show', truck %></td>
-    <td><%= link_to 'Edit', edit_truck_path(truck) %></td>
-    <td><%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+      <% @trucks.each do |truck| %>
+        <tr>
+          <td><%= link_to truck.name, truck %></td>
+          <td><%= truck.model_year %></td>
+          <td><%= truck.m %></td>
+          <td><%= truck.m2 %></td>
+          <td><%= truck.a %></td>
+          <td><%= truck.b %></td>
+          <td><%= truck.c %></td>
+          <td><%= truck.d %></td>
+          <td><%= truck.e %></td>
+          <td><%= truck.f %></td>
+          <td><%= truck.g %></td>
+          <td><%= truck.h %></td>
+          <td><%= truck.i %></td>
+          <td><%= link_to 'Edit', edit_truck_path(truck) %></td>
+          <td><%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      </table>
 
-<br />
+      <br />
 
-<%= link_to 'New Truck', new_truck_path %>
+      <%= link_to 'New Truck', new_truck_path %>
+    </div>
+  </div>
+</div>

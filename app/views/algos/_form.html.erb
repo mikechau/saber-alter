@@ -1,61 +1,48 @@
-<%= form_for(@algo) do |f| %>
-  <% if @algo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@algo.errors.count, "error") %> prohibited this algo from being saved:</h2>
+<%= simple_form_for @algo do |f| %>
 
-      <ul>
-      <% @algo.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+  <div class="row-fluid">
+    <div class="span6 well">
+
+      <% if @algo.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-error">
+            <h3><%= pluralize(@algo.errors.count, "error") %> prohibited this algo from being saved:</h3>
+          </div>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+      <div class="row-fluid">
+        <div class="span3">
+          <%= f.input :name %>
+          <%= f.input :y_intercept %>
+          <%= f.input :a %>
+        </div>
+
+        <div class="span3">
+          <%= f.input :b %>
+          <%= f.input :c %>
+          <%= f.input :d %>
+        </div>
+
+        <div class="span3">
+          <%= f.input :e %>
+          <%= f.input :f %>
+          <%= f.input :g %>
+        </div>
+
+        <div class="span3">
+          <%= f.input :h %>
+          <%= f.input :i %>
+        </div>
+      </div>
+
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :y_intercept %><br />
-    <%= f.text_field :y_intercept %>
+
+  <div class="row-fluid">
+    <div class="span12">
+      <%= f.button :submit %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :a %><br />
-    <%= f.number_field :a %>
-  </div>
-  <div class="field">
-    <%= f.label :b %><br />
-    <%= f.number_field :b %>
-  </div>
-  <div class="field">
-    <%= f.label :c %><br />
-    <%= f.number_field :c %>
-  </div>
-  <div class="field">
-    <%= f.label :d %><br />
-    <%= f.number_field :d %>
-  </div>
-  <div class="field">
-    <%= f.label :e %><br />
-    <%= f.number_field :e %>
-  </div>
-  <div class="field">
-    <%= f.label :f %><br />
-    <%= f.number_field :f %>
-  </div>
-  <div class="field">
-    <%= f.label :g %><br />
-    <%= f.number_field :g %>
-  </div>
-  <div class="field">
-    <%= f.label :h %><br />
-    <%= f.number_field :h %>
-  </div>
-  <div class="field">
-    <%= f.label :i %><br />
-    <%= f.text_field :i %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

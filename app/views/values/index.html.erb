@@ -1,29 +1,40 @@
-<h1>Listing values</h1>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span8 offset1"> 
+    <h1>Listing values</h1>
 
-<table>
-  <tr>
-    <th>Truck</th>
-    <th>Ts</th>
-    <th>Estimate</th>
-    <th>Actual</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <table class="table table-hover table-striped table-condensed table-bordered">
+      <tr>
+        <th>Truck</th>
+        <th>Ts</th>
+        <th>Estimate</th>
+        <th>Actual</th>
+        <th>Algo</th>
+        <th></th>
+        <th></th>
+      </tr>
 
-<% @values.each do |value| %>
-  <tr>
-    <td><%= value.truck_id %></td>
-    <td><%= value.ts %></td>
-    <td><%= value.estimate %></td>
-    <td><%= value.actual %></td>
-    <td><%= link_to 'Show', value %></td>
-    <td><%= link_to 'Edit', edit_value_path(value) %></td>
-    <td><%= link_to 'Destroy', value, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <% @values.each do |value| %>
+      <tr>
+        <td><%= link_to value.truck.name, truck_url(value.truck_id) %></td>
+        <td><%= value.ts %></td>
+        <td><%= number_to_currency(value.estimate) %></td>
+        <td><%= value.actual %></td>
+        <% if value.algo != nil %>
+        <td><%= value.algo.name %></td>
+        <% else%>
+        <td>None</td>
+        <% end %>
+        <td><%= link_to 'Edit', edit_value_path(value) %></td>
+        <td><%= link_to 'Destroy', value, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
 
-<br />
+    <br />
 
-<%= link_to 'New Value', new_value_path %>
+    <%= link_to 'New Value', new_value_path %>
+
+    </div>
+  </div>
+</div>
