@@ -22,7 +22,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development, :test do
+group :development, :test dogem 'rails_bootstrap_navbar'
   gem 'rspec-rails', '~> 2.0'
 end
 
@@ -45,3 +45,4 @@ gem 'jquery-rails'
 
 gem 'figaro'
 gem 'simple_form'
+gem 'rails_bootstrap_navbar'
