@@ -14,6 +14,7 @@ class TrucksController < ApplicationController
   # GET /trucks/1.json
   def show
     @truck = Truck.find(params[:id])
+    @value = Value.where(:truck_id => @truck.id).last
 
     respond_to do |format|
       format.html # show.html.erb
@@ -44,6 +45,7 @@ class TrucksController < ApplicationController
 
     respond_to do |format|
       if @truck.save
+        @value = Value.create(:truck_id => @truck.id, :ts => Time.now, :estimate => @truck.calculate(params[:algo]))
         format.html { redirect_to @truck, notice: 'Truck was successfully created.' }
         format.json { render json: @truck, status: :created, location: @truck }
       else

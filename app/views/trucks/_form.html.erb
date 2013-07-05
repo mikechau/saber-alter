@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= label_tag :algo %><br />
+    <%= select("algo", "id", Algo.all.collect {|a| [ a.name, a.id ] }) %>
+  </div>
+
+  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
@@ -33,31 +38,31 @@
   </div>
   <div class="field">
     <%= f.label :b %><br />
-    <%= f.text_field :b %>
+    <%= f.check_box :b %>
   </div>
   <div class="field">
     <%= f.label :c %><br />
-    <%= f.text_field :c %>
+    <%= f.check_box :c %>
   </div>
   <div class="field">
     <%= f.label :d %><br />
-    <%= f.text_field :d %>
+    <%= f.check_box :d %>
   </div>
   <div class="field">
     <%= f.label :e %><br />
-    <%= f.text_field :e %>
+    <%= f.check_box :e %>
   </div>
   <div class="field">
     <%= f.label :f %><br />
-    <%= f.text_field :f %>
+    <%= f.check_box :f %>
   </div>
   <div class="field">
     <%= f.label :g %><br />
-    <%= f.text_field :g %>
-  </div>
+    <%= f.check_box :g %>
+  </div>  
   <div class="field">
     <%= f.label :h %><br />
-    <%= f.text_field :h %>
+    <%= f.check_box :h %>
   </div>
   <div class="field">
     <%= f.label :i %><br />
