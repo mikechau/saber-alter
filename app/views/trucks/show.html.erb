@@ -1,75 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="row-fluid">
 
-<p>
-  <b>Name:</b>
-  <%= @truck.name %>
-</p>
+    <div class="span3 well">
+      <h2>Inputs:</h2>
+      <ul>
+        <li><b>Name:</b> <%= @truck.name %></li>
+        <li><b>Model Year:</b> <%= @truck.model_year %></li>
+        <li><b>M:</b> <%= @truck.m %></li>
+        <li><b>M2:</b> <%= @truck.m2 %></li>
+        <li><b>A:</b> <%= @truck.a %></li>
+        <li><b>B:</b> <%= @truck.b %></li>
+        <li><b>B:</b> <%= @truck.b %></li>
+        <li><b>C:</b> <%= @truck.c %></li>
+        <li><b>D:</b> <%= @truck.d %></li>
+        <li><b>E:</b> <%= @truck.e %></li>
+        <li><b>F:</b> <%= @truck.f %></li>
+        <li><b>G:</b> <%= @truck.g %></li>
+        <li><b>H:</b> <%= @truck.h %></li>
+        <li><b>I:</b> <%= @truck.i %></li>
+      </ul>
+    </div>
 
-<p>
-  <b>Model year:</b>
-  <%= @truck.model_year %>
-</p>
+    <div class="span3 offset1 well">
+      <h2>Output:</h2>
+      <br />
+      <h3>Estimated Value:</h3>
+      <h1><%= number_to_currency(@value.estimate) %></h1>
+      <br />
+      <h4><%= @value.ts %></h4>
+    </div>
 
-<p>
-  <b>M:</b>
-  <%= @truck.m %>
-</p>
-
-<p>
-  <b>M2:</b>
-  <%= @truck.m2 %>
-</p>
-
-<p>
-  <b>A:</b>
-  <%= @truck.a %>
-</p>
-
-<p>
-  <b>B:</b>
-  <%= @truck.b %>
-</p>
-
-<p>
-  <b>C:</b>
-  <%= @truck.c %>
-</p>
-
-<p>
-  <b>D:</b>
-  <%= @truck.d %>
-</p>
-
-<p>
-  <b>E:</b>
-  <%= @truck.e %>
-</p>
-
-<p>
-  <b>F:</b>
-  <%= @truck.f %>
-</p>
-
-<p>
-  <b>G:</b>
-  <%= @truck.g %>
-</p>
-
-<p>
-  <b>H:</b>
-  <%= @truck.h %>
-</p>
-
-<p>
-  <b>I:</b>
-  <%= @truck.i %>
-</p>
-
-<p>
-  <b>V:</b>
-  <%= @value.estimate %>
-</p>
-
-
-<%= link_to 'Edit', edit_truck_path(@truck) %> |
-<%= link_to 'Back', trucks_path %>
+  </div>
+</div>

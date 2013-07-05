@@ -1,74 +1,53 @@
-<%= form_for(@truck) do |f| %>
-  <% if @truck.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@truck.errors.count, "error") %> prohibited this truck from being saved:</h2>
+<%= simple_form_for @truck do |f| %>
 
-      <ul>
-      <% @truck.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+  <div class="row-fluid">
+    <div class="span7 well">
+
+      <% if @truck.errors.any? %>
+      <div id="error_explanation">
+        <div class="alert alert-error">
+          <h3><%= pluralize(@truck.errors.count, "error") %> prohibited this truck from being saved:</h3>
+        </div>
+      </div>
       <% end %>
-      </ul>
+
+      <div class="row-fluid" >
+        <div class="span3">
+          <div class="control-group string required algo">
+            <%= label_tag :algo, nil, :class => "string required control-label" %>
+            <%= select("algo", "id", Algo.all.collect {|a| [ a.name, a.id ] }) %>
+          </div>
+          <%= f.input :m %>
+          <%= f.input :m2 %>
+        </div>
+
+        <div class="span3" >
+          <%= f.input :name %>
+          <%= f.input :model_year %>
+          <%= f.input :i %>
+        </div>
+
+        <div class="span2" >
+          <%= f.input :b,   as: :select, :selected => 'false' %>
+          <%= f.input :c, as: :select, :selected => 'false' %>
+          <%= f.input :d, as: :select, :selected => 'false' %>
+          <%= f.input :e, as: :select, :selected => 'false' %>
+        </div>
+
+        <div class="span2">
+          <%= f.input :f, as: :select, :selected => 'false' %>
+          <%= f.input :g, as: :select, :selected => 'false' %>
+          <%= f.input :h, as: :select, :selected => 'false' %>
+        </div>
+      </div>
+
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= label_tag :algo %><br />
-    <%= select("algo", "id", Algo.all.collect {|a| [ a.name, a.id ] }) %>
   </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="row-fluid">
+    <div class="span12">
+      <%= f.button :submit %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :model_year %><br />
-    <%= f.text_field :model_year %>
-  </div>
-  <div class="field">
-    <%= f.label :m %><br />
-    <%= f.text_field :m %>
-  </div>
-  <div class="field">
-    <%= f.label :m2 %><br />
-    <%= f.text_field :m2 %>
-  </div>
-  <div class="field">
-    <%= f.label :a %><br />
-    <%= f.text_field :a %>
-  </div>
-  <div class="field">
-    <%= f.label :b %><br />
-    <%= f.check_box :b %>
-  </div>
-  <div class="field">
-    <%= f.label :c %><br />
-    <%= f.check_box :c %>
-  </div>
-  <div class="field">
-    <%= f.label :d %><br />
-    <%= f.check_box :d %>
-  </div>
-  <div class="field">
-    <%= f.label :e %><br />
-    <%= f.check_box :e %>
-  </div>
-  <div class="field">
-    <%= f.label :f %><br />
-    <%= f.check_box :f %>
-  </div>
-  <div class="field">
-    <%= f.label :g %><br />
-    <%= f.check_box :g %>
-  </div>  
-  <div class="field">
-    <%= f.label :h %><br />
-    <%= f.check_box :h %>
-  </div>
-  <div class="field">
-    <%= f.label :i %><br />
-    <%= f.text_field :i %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>
