@@ -2,7 +2,7 @@ class CreateAlgos < ActiveRecord::Migration
   def change
     create_table :algos do |t|
       t.string :name
-      t.decimal :y_intercept, :precision => 8, :scale => 2
+      t.decimal :y_intercept, :precision => 16, :scale => 8
       t.integer :a
       t.integer :b
       t.integer :c
@@ -11,7 +11,7 @@ class CreateAlgos < ActiveRecord::Migration
       t.integer :f
       t.integer :g
       t.integer :h
-      t.decimal :i, :precision => 8, :scale => 2
+      t.decimal :i, :precision => 16, :scale => 8
 
       t.timestamps
     end

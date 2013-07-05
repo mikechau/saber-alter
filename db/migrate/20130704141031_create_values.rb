@@ -3,8 +3,8 @@ class CreateValues < ActiveRecord::Migration
     create_table :values do |t|
       t.integer :truck_id
       t.datetime :ts
-      t.decimal :estimate, :precision => 8, :scale => 2
-      t.decimal :actual, :precision => 8, :scale => 2
+      t.decimal :estimate, :precision => 16, :scale => 8
+      t.decimal :actual, :precision => 16, :scale => 8
 
       t.timestamps
     end
