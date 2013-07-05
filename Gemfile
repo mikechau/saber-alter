@@ -15,6 +15,8 @@ group :assets do
   gem 'bootstrap-sass', '~> 2.3.2.0'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bootswatch-rails'
+  gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+  gem 'jquery-ui-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby

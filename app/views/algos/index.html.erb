@@ -1,43 +1,52 @@
-<h1>Listing algos</h1>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span8 offset1"> 
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Y intercept</th>
-    <th>A</th>
-    <th>B</th>
-    <th>C</th>
-    <th>D</th>
-    <th>E</th>
-    <th>F</th>
-    <th>G</th>
-    <th>H</th>
-    <th>I</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+      <h1>Listing algos</h1>
 
-<% @algos.each do |algo| %>
-  <tr>
-    <td><%= algo.name %></td>
-    <td><%= algo.y_intercept %></td>
-    <td><%= algo.a %></td>
-    <td><%= algo.b %></td>
-    <td><%= algo.c %></td>
-    <td><%= algo.d %></td>
-    <td><%= algo.e %></td>
-    <td><%= algo.f %></td>
-    <td><%= algo.g %></td>
-    <td><%= algo.h %></td>
-    <td><%= algo.i %></td>
-    <td><%= link_to 'Show', algo %></td>
-    <td><%= link_to 'Edit', edit_algo_path(algo) %></td>
-    <td><%= link_to 'Destroy', algo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+      <table id="algos" class="display table table-hover table-striped table-condensed table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Y intercept</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+            <th>G</th>
+            <th>H</th>
+            <th>I</th>
+            <th>Action</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @algos.each do |algo| %>
+          <tr>
+            <td><%= algo.name %></td>
+            <td><%= algo.y_intercept %></td>
+            <td><%= algo.a %></td>
+            <td><%= algo.b %></td>
+            <td><%= algo.c %></td>
+            <td><%= algo.d %></td>
+            <td><%= algo.e %></td>
+            <td><%= algo.f %></td>
+            <td><%= algo.g %></td>
+            <td><%= algo.h %></td>
+            <td><%= algo.i %></td>
+            <td><%= link_to 'Edit', edit_algo_path(algo) %></td>
+            <td><%= link_to 'Destroy', algo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
 
-<br />
+      <br />
 
-<%= link_to 'New Algo', new_algo_path %>
+      <%= link_to 'New Algo', new_algo_path %>
+
+    </div>
+  </div>
+</div>
