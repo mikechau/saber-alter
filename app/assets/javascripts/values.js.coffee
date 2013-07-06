@@ -5,3 +5,5 @@ jQuery ->
         $('#values').dataTable
           sPaginationType: "full_numbers"
           bJQueryUI: true
+          sScrollX: '100%'
+          bScrollCollapse: true

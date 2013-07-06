@@ -5,3 +5,4 @@ jQuery ->
         $('#algos').dataTable
           sPaginationType: "full_numbers"
           bJQueryUI: true
+          sScrollX: '100%'
