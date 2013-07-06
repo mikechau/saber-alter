@@ -3,7 +3,7 @@ class Truck < ActiveRecord::Base
 
   has_many :values
 
-  validates_presence_of :model_year, :i
+  validates_presence_of :model_year, :i, :name
   validates_uniqueness_of :name
 
   def calculate(algo_id)
